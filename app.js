@@ -24,8 +24,9 @@ app.use((req, res, next) => {
         msg: 'General Error: Sorry this page Cannot be found'
     })
 })
+const PORT = process.env.PORT || 2222
 const start = () => {
-    app.listen(2222, () => {
+    app.listen(PORT, () => {
         console.log(`Listening on port 2222.....`)
     })
 }
