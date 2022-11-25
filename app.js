@@ -13,8 +13,8 @@ const mongoose = require('mongoose')
 // mongoose.set('useFindAndModify', false);
 // mongoose.set('useCreateIndex', true);
 
-app.use('/',(req, res, next) => {
-    return res.json({
+app.get('/',(req, res, next) => {
+    return res.status(200).json({
         word: "Hello Fam"
     })
 })
@@ -24,10 +24,11 @@ app.use((req, res, next) => {
         msg: 'General Error: Sorry this page Cannot be found'
     })
 })
-
 const start = () => {
     app.listen(2222, () => {
         console.log(`Listening on port 2222.....`)
     })
 }
+
+start()
 
